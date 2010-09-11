@@ -1,6 +1,6 @@
 module csausdev log4js-node
 module LearnBoost mongoose
-module christkv node-mongodb-native
+module christkv node-mongodb-native 78a96e85963f4869a4440355b5bbfb93c8d449a6
 
 ##########################
 # As ndistro is just a bash script
