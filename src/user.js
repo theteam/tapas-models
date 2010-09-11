@@ -1,4 +1,4 @@
-var mongoose = require('../models/mongoose/mongoose').Mongoose;
+var mongoose = require('../modules/mongoose/mongoose').Mongoose;
 var db = mongoose.connect('mongodb://localhost/tapas');
 
 mongoose.model('User', {
