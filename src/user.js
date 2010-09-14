@@ -3,37 +3,20 @@ var db = mongoose.connect('mongodb://localhost/tapas');
 
 mongoose.model('User', {
 
-    properties: ['first', 'last', 'age', 'updated_at'],
+    'properties': ['username', 'first', 'last', 'phone', 'company', 'department', 'address',  'imageUri', 'bio', 'skills', {'clients':[]}, 'updated_at'],
 
-    cast: {
-      age: Number,
-      'nested.path': String
-    },
+    'indexes': ['first', 'last', 'username'],
 
-    indexes: ['first'],
-
-    setters: {
-        first: function(v){
-            return v.toLowerCase();
-        }
-    },
-
-    getters: {
+    'getters': {
         full_name: function(){ 
             return this.first + ' ' + this.last; 
         }
     },
 
-    methods: {
+    'methods': {
         save: function(fn){
             this.updated_at = new Date();
             this.__super__(fn);
-        }
-    },
-
-    static: {
-        findOldPeople: function(){
-            return this.find({age: { '$gt': 70 }});
         }
     }
 
