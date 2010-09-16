@@ -3,7 +3,7 @@ var db = mongoose.connect('mongodb://localhost/tapas');
 
 mongoose.model('User', {
 
-    'properties': ['username', 'first', 'last', 'phone', 'email', 'company', 'department', 'address',  'imageUri', 'bio', 'skills', {'clients':[]}, 'updated_at'],
+    'properties': ['username', 'first', 'last', 'phone', 'email', 'company', 'department', 'address',  'imageUri', 'bio', {'skills':[]}, {'clients':[]}, 'updated_at'],
 
     'indexes': ['first', 'last', 'username'],
 
