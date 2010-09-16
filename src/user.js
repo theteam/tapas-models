@@ -5,7 +5,7 @@ mongoose.model('User', {
 
     'properties': ['username', 'first', 'last', 'phone', 'email', 'company', 'department', 'address',  'imageUri', 'bio', {'skills':[]}, {'clients':[]}, 'updated_at'],
 
-    'indexes': ['first', 'last', 'username'],
+    'indexes': ['first', 'last', [{'username':1},{unique: true}]],
 
     'getters': {
         full_name: function(){ 
