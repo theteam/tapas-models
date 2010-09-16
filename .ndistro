@@ -8,4 +8,4 @@ module christkv node-mongodb-native 78a96e85963f4869a4440355b5bbfb93c8d449a6
 # dependencies below.
 ##########################
 
-mv modules/node-mongodb-native modules/mongoose/lib/support/
+cp -R modules/node-mongodb-native modules/mongoose/lib/support/
