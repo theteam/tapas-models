@@ -1,5 +1,6 @@
 var mongoose = require('../modules/mongoose/mongoose').Mongoose;
 var db = mongoose.connect('mongodb://localhost/tapas');
+var crypto = require('crypto');
 
 mongoose.model('User', {
 
@@ -22,10 +23,10 @@ mongoose.model('User', {
 
 	'static' : {
 		encryptPassword : function(cleartext){
-			return crypto.createHash('sha-1').update(cleartext).digest('hex');
+			return crypto.createHash('md5').update(cleartext).digest('hex');
 		},
 		validatePassword : function(cleartext, encoded){
-			return crypto.createHash('sha-1').update(cleartext).digest('hex') === encoded;
+			return crypto.createHash('md5').update(cleartext).digest('hex') === encoded;
 		}
 	}
 
