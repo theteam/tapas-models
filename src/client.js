@@ -3,7 +3,7 @@ var db = mongoose.connect('mongodb://localhost/tapas');
 
 mongoose.model('Client', {
 
-    'properties': ['slug', 'full_name', 'updated_at'],
+    'properties': ['slug', 'full_name', 'short_name', 'updated_at'],
 
     'indexes': ['full_name', [{'slug':1},{unique: true}]],
 
