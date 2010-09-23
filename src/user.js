@@ -14,6 +14,8 @@ mongoose.model('User', {
 				var result = new Array();
 				result[0] = c;
 				return result;
+			} else {
+				return c;
 			}
 		}
 	},
